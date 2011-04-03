@@ -19,6 +19,8 @@ Below shows a few examples of how to use the plugin to easily create a new jQuer
  $.plugin("myPlugin", function() {
  	// Your functionality goes here.
  });
+ 
+ $("div, a").myPlugin(); // Use in the same way you always have! Support multiple selectors out of the box.
 
 === Specify default options ===
 
@@ -26,13 +28,17 @@ Below shows a few examples of how to use the plugin to easily create a new jQuer
  	// Your functionality goes here.
  	// 'settings' are the default options merged with the overrides.
  });
+ 
+ $("div, a").myPlugin({"default":"override"}); // Supports options merging
 
 === Multiple methods ===
 
  $.plugin("myPlugin", {"default":"options"}, {
- 	foo: function() {},
- 	bar: function() {}
+ 	myMethod: function() {},
+ 	foo: function() {}
  });
+ 
+ $("div").myPlugin("myMethod").myPlugin("foo"); // Call multiple methods within the plugin
 
 == License ==
 The MIT License
