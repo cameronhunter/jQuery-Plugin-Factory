@@ -46,8 +46,41 @@
       <span class="small">by <a href="http://github.com/cameronhunter">cameronhunter</a></span></h1>
 
     <div class="description">
-      A plugin which takes care of all the jQuery plugin best practices for you, so you can focus on the functionality
+      A plugin which takes care of all the jQuery plugin <a href="http://docs.jquery.com/Plugins/Authoring" target="_blank">best practices</a> for you, so you can focus on the functionality.
     </div>
+
+<h2>Usage</h2>
+
+<h3>Simple plugin example</h3>
+<pre>
+$.plugin("myPlugin", function() {
+	// Your functionality goes here.
+});
+ 
+// Use in the same way you always have!
+// Supports multiple selectors out of the box.
+$("div, a").myPlugin();
+</pre>
+
+<h3>Specifying default options</h3>
+<pre>
+$.plugin("myPlugin", {"default":"options"}, function( settings ) {
+	// Your functionality goes here.
+	// 'settings' are the default options merged with the overrides.
+});
+ 
+$("div, a").myPlugin({"default":"override"}); // Supports options merging
+</pre>
+
+<h3>Multiple methods, single namespace</h3>
+<pre>
+$.plugin("myPlugin", {"default":"options"}, {
+	myMethod: function() {},
+	foo: function() {}
+});
+ 
+$("div").myPlugin("myMethod").myPlugin("foo"); // Call multiple methods within the plugin
+</pre>
 
 <h2>License</h2>
 <p>The MIT License
