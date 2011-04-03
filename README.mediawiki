@@ -12,13 +12,24 @@ There are many [http://docs.jquery.com/Plugins/Authoring best practices] when cr
 
 == Usage ==
 
-Creating your plugin:
- $.plugin("tooltip", {"location":"top", "background-color":"blue"}, function( settings ) {
- 	// Tooltip plugin goes here
+Below shows a few examples of how to use the plugin to easily create a new jQuery plugin which incorporates all of the best practices. You can use your plugin in the same way that you always have!
+
+=== Creating a very simple plugin ===
+ $.plugin("myPlugin", function() {
+ 	// Your functionality goes here.
  });
 
-Using your plugin:
- $("div").tooltip({"location":"left"});
+=== Specify default options ===
+ $.plugin("myPlugin", {"default":"options"}, function( settings ) {
+ 	// Your functionality goes here.
+ 	// 'settings' are the default options merged with the overrides.
+ });
+
+=== Multiple methods ===
+ $.plugin("myPlugin", {"default":"options"}, {
+ 	foo: function() {},
+ 	bar: function() {}
+ });
 
 == License ==
 The MIT License
