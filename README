@@ -1,0 +1,42 @@
+= jQuery Plugin Plugin =
+
+There are many [http://docs.jquery.com/Plugins/Authoring best practices] when creating a jQuery plugin. Adapted from jQuery docs:
+
+;Context: Ensure that the dollar sign maps to jQuery and isn't overwritten by another library in the scopt of its execution.
+;Maintaining Chainability: Plugins should return the ''this'' keyword in its immediate scope, it maintains chainability and the jQuery collection can continue to be manipulated by jQuery methods.
+;Defaults and Options: For more complex and customizable plugins that provide many options, it's a best practice to have default settings that can be extended when the plugin is invoked.
+;Namespacing: Namespacing correctly assures that your plugin will have a very low chance of being overwritten by other plugins or code living on the same page.
+;Multiple selectors: Your plugin should handle multiple selectors being passed to it.
+
+== Usage ==
+
+Creating your plugin:
+ $.plugin("tooltip", {"location":"top", "background-color":"blue"}, function( settings ) {
+ 	// Tooltip plugin goes here
+ });
+
+Using your plugin:
+ $("div").tooltip({"location":"left"});
+
+== License ==
+The MIT License
+
+Copyright (c) 2011 Cameron Hunter
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
