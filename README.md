@@ -1,5 +1,5 @@
-jQuery Plugin Plugin
-====================
+jQuery Plugin Factory
+=====================
 
 There are many [best practices](http://docs.jquery.com/Plugins/Authoring) when creating a jQuery plugin. This project takes care of all the boilerplate code required to fullfill these best practices so you can focus on the functionality of your plugin. 
 
