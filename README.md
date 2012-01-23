@@ -1,7 +1,7 @@
 jQuery Plugin Plugin
 ====================
 
-There are many [http://docs.jquery.com/Plugins/Authoring best practices] when creating a jQuery plugin. This project takes care of all the boilerplate code required to fullfill these best practices so you can focus on the functionality of your plugin. 
+There are many [best practices](http://docs.jquery.com/Plugins/Authoring) when creating a jQuery plugin. This project takes care of all the boilerplate code required to fullfill these best practices so you can focus on the functionality of your plugin. 
 
 Features
 --------
