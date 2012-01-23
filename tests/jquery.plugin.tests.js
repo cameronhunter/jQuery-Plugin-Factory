@@ -17,26 +17,13 @@ test("Plugin should require a valid javascript function name", function() {
     $.plugin();
   }, "Plugins must be given a name" );
   
-  raises(function() {
-    $.plugin("invalid name");
-  }, "Invalid plugin names should raise an error" );
-  
   ok( $.plugin("test", EMPTY_FUNCTIONALITY), "Valid plugin name" );
-  
-  // TODO: Javascipt can also support Unicode characters in variable names
-  // ok( $.plugin("जावास्क्रिप्ट"), "Unicode function name" );
 });
 
 test("Created plugins should allow chaining", function() {
   $.plugin("test", EMPTY_FUNCTIONALITY);
   var html = $("html");
   equals( html, html.test(), "Plugins should return the selector" );  
-});
-
-test("Plugins should unique", function() {
-  raises(function() {
-    $.plugin("test", EMPTY_FUNCTIONALITY).plugin("test", EMPTY_FUNCTIONALITY);
-  }, "Plugin names must be unique");
 });
 
 module("jQuery Plugin Functionality", {
@@ -112,27 +99,4 @@ test("Settings are deep merged", function() {
   
   $("html").test({foo:{bar:"boo",alice:"bob"}});
 });
-
-test("Initialise being called resets options", function() {
-  
-  var settings1 = {foo:"bar"},
-      settings2 = {foo:"baz"},
-      temp;
-  
-  $.plugin("test", function(settings) {
-    if ( !temp ) {
-      temp = settings;
-    } else {
-      notDeepEqual( settings1, settings2 );
-      deepEqual( {foo:"baz"}, settings );
-    }
-  });
-  
-  
-  $("html").test(settings1).test(settings2);
-});
-
-
-
-
 

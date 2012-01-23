@@ -1,52 +1,51 @@
-(function($) {
+(function($, undef) {
     $.extend({
-        validate: function( condition, msg ) {
-            if ( !condition ) $.error( msg );
-            return $;
-        },
-        plugin: function( name, defaultSettings, functionality ) {
+        plugin: function(/* plugin_name, [default_settings], functionality */) {
         
-            var undef, defaults, methods, init = "init";
+            var plugin_name = arguments[0],
+                default_settings = arguments.length === 3 ? arguments[1] : {},
+                functionality = arguments.length === 3 ? arguments[2] : arguments[1];
             
-            if ( arguments.length === 3 ) {
-                defaults = defaultSettings;
-                methods = functionality;
-            } else {
-                methods = defaultSettings;
+            if ( !plugin_name ) {
+                $.error( 'You must specify a valid name for the plugin' );
             }
             
-            $.validate( name && /^(?:[a-z_$][a-z_$0-9]*)$/i.test(name), "You must specify a valid name for the plugin" ).
-              validate( !$.isFunction($.fn[name]), 'jQuery plugin "' + name + '" already exists' ).
-              validate( $.isFunction(methods) || ($.isPlainObject(methods) && !$.isEmptyObject(methods)), "You must specify functionality for the plugin" );
-              
-            methods = $.isFunction( methods ) ? {init:methods} : $.extend({}, {init:function() {}}, methods);
+            if ( $.isFunction( functionality ) ) {
+                functionality = { init: functionality };
+            } else if ( $.isPlainObject(functionality) && !$.isEmptyObject(functionality) ) {
+                functionality = $.extend({}, { init: function() {} }, functionality)
+            } else {
+                $.error( 'You must specify functionality for the plugin' );
+            }
             
             var settings = function( options ) {
-                  var init = this, _settings = (defaults || options) ? $.extend(true, {}, defaults, options) : undef;
-                  settings = function( options ) { return options ? init : _settings; };
-                  return _settings;
-                };
+                var init = this, 
+                    _settings = (default_settings || options) ? $.extend(true, {}, default_settings, options) : undef;
+                settings = function( options ) { return options ? init : _settings; };
+                return _settings;
+            };
             
-            $.fn[name] = function( options ) {
-                var args, method = ($.type(options) === "string") ? options : init;
+            $.fn[plugin_name] = function( options ) {
+                var args, method_name = ($.type(options) === 'string') ? options : 'init';
 
-                if ( !(methods[method] && $.isFunction( methods[method] )) ) {
-                    $.error( 'The plugin "' + name + '" does not have a method "' + method + '"' );
+                if ( !$.isFunction( functionality[method_name] ) ) {
+                    $.error( 'The plugin "' + plugin_name + '" does not have method "' + method_name + '"' );
                 }
                 
-                if ( method === init ) {
+                if ( 'init' === method_name ) {
                     args = [settings( options )];
                 } else {
                     var params = Array.prototype.slice.call( arguments, 1 );
                     args = settings() ? [settings()].concat(params) : params;
                 }
                 
-                for(var i=(this.length-1); i>=0; i--) { 
-                    methods[method].apply($(this[i]), args); 
+                for( var i=0, len=this.length; i < len; i++ ) { 
+                    functionality[method_name].apply( $(this[i]), args ); 
                 }
                 
                 return this;
             };
+            
             return $;
         }
     });
