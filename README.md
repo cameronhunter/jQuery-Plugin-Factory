@@ -38,10 +38,10 @@ Below shows a few examples of how to use the plugin to easily create a new jQuer
 
     $.plugin("myPlugin", {"default":"options"}, {
         myMethod: function() {},
-        foo: function() {}
+        foo: function(param, settings) {}
     });
     
-    $("div").myPlugin("myMethod").myPlugin("foo"); // Call multiple methods within the plugin
+    $("div").myPlugin("myMethod").myPlugin("foo", "accepts parameters too"); // Call multiple methods within the plugin
 
 License
 -------

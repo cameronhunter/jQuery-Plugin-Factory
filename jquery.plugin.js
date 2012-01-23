@@ -36,7 +36,7 @@
                     args = [settings( options )];
                 } else {
                     var params = Array.prototype.slice.call( arguments, 1 );
-                    args = settings() ? [settings()].concat(params) : params;
+                    args = settings() ? params.concat( settings() ) : params;
                 }
                 
                 for( var i=0, len=this.length; i < len; i++ ) { 
