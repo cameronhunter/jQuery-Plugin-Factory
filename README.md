@@ -19,51 +19,32 @@ Below shows a few examples of how to use the plugin to easily create a new jQuer
 
 ### Creating a very simple plugin
 
-    $.plugin("myPlugin", function() {
-        // Your functionality goes here.
-    });
-    
-    $("div, a").myPlugin(); // Use in the same way you always have! Support multiple selectors out of the box.
+````javascript
+$.plugin("myPlugin", function() {
+    // Your functionality goes here.
+});
+
+$("div, a").myPlugin(); // Use in the same way you always have! Support multiple selectors out of the box.
+````
 
 ### Specify default options
 
-    $.plugin("myPlugin", {"default":"options"}, function( settings ) {
-        // Your functionality goes here.
-        // 'settings' are the default options merged with the overrides.
-    });
-    
-    $("div, a").myPlugin({"default":"override"}); // Supports options merging
+````javascript
+$.plugin("myPlugin", {"default":"options"}, function( settings ) {
+    // Your functionality goes here.
+    // 'settings' are the default options merged with the overrides.
+});
+
+$("div, a").myPlugin({"default":"override"}); // Supports options merging
+````
 
 ### Multiple methods
 
-    $.plugin("myPlugin", {"default":"options"}, {
-        myMethod: function() {},
-        foo: function(param, settings) {}
-    });
-    
-    $("div").myPlugin("myMethod").myPlugin("foo", "accepts parameters too"); // Call multiple methods within the plugin
+````javascript
+$.plugin("myPlugin", {"default":"options"}, {
+    myMethod: function() {},
+    foo: function(param, settings) {}
+});
 
-License
--------
-
-The MIT License
-
-Copyright (c) 2011 Cameron Hunter
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
+$("div").myPlugin("myMethod").myPlugin("foo", "accepts parameters too"); // Call multiple methods within the plugin
+````
