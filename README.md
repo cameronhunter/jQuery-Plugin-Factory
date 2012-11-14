@@ -21,11 +21,11 @@ In your web page:
 Features
 --------
 
-* Context -- Ensure that the dollar sign maps to jQuery and isn't overwritten by another library in the scopt of its execution.
-* Maintaining Chainability -- Plugins should return the ''this'' keyword in its immediate scope, it maintains chainability and the jQuery collection can continue to be manipulated by jQuery methods.
-* Defaults and Options -- For more complex and customizable plugins that provide many options, it's a best practice to have default settings that can be extended when the plugin is invoked.
-* Single namespace for multiple methods -- Plugins can contain multiple methods, but should only acquire a single namespace.
-* Multiple selectors -- Your plugin should handle multiple selectors being passed to it.
+* Context - Ensure that the dollar sign maps to jQuery and isn't overwritten by another library in the scopt of its execution.
+* Maintaining Chainability - Plugins should return the ''this'' keyword in its immediate scope, it maintains chainability and the jQuery collection can continue to be manipulated by jQuery methods.
+* Defaults and Options - For more complex and customizable plugins that provide many options, it's a best practice to have default settings that can be extended when the plugin is invoked.
+* Single namespace for multiple methods - Plugins can contain multiple methods, but should only acquire a single namespace.
+* Multiple selectors - Your plugin should handle multiple selectors being passed to it.
 
 Usage
 -----
