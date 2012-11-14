@@ -16,7 +16,7 @@ In your web page:
 <script src="dist/jQuery-Plugin-Factory.min.js"></script>
 ```
 
-## Features
+## Best Practices
 
 <dl>
 	<dt>Context</dt>
