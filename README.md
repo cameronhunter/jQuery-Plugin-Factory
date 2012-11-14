@@ -16,11 +16,6 @@ In your web page:
 ```html
 <script src="jquery.js"></script>
 <script src="dist/jQuery-Plugin-Factory.min.js"></script>
-<script>
-jQuery(function($) {
-  $.awesome(); // "awesome"
-});
-</script>
 ```
 
 Features
