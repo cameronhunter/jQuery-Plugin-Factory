@@ -1,3 +1,7 @@
+/*! jQuery Plugin Factory - v1.0.0 - 2012-11-14
+* https://github.com/cameron/jQuery-Plugin-Factory
+* Copyright (c) 2012 Cameron Hunter; Licensed MIT */
+
 (function($, undef) {
     $.extend({
         plugin: function(/* plugin_name, [default_settings], functionality */) {
@@ -13,7 +17,7 @@
             if ( $.isFunction( functionality ) ) {
                 functionality = { init: functionality };
             } else if ( $.isPlainObject(functionality) && !$.isEmptyObject(functionality) ) {
-                functionality = $.extend({}, { init: function() {} }, functionality)
+                functionality = $.extend({}, { init: function() {} }, functionality);
             } else {
                 $.error( 'You must specify functionality for the plugin' );
             }

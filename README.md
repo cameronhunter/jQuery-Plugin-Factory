@@ -1,7 +1,27 @@
 jQuery Plugin Factory
 =====================
 
-There are many [best practices](http://docs.jquery.com/Plugins/Authoring) when creating a jQuery plugin. This project takes care of all the boilerplate code required to fullfill these best practices so you can focus on the functionality of your plugin. 
+There are many [best practices](http://docs.jquery.com/Plugins/Authoring) when creating a jQuery plugin. This project takes care of all the boilerplate code required to fullfill these best practices so you can focus on the functionality of your plugin.
+
+Getting Started
+---------------
+
+Download the [production version][min] or the [development version][max].
+
+[min]: https://raw.github.com/cameron/jQuery-Plugin-Factory/master/dist/jQuery-Plugin-Factory.min.js
+[max]: https://raw.github.com/cameron/jQuery-Plugin-Factory/master/dist/jQuery-Plugin-Factory.js
+
+In your web page:
+
+```html
+<script src="jquery.js"></script>
+<script src="dist/jQuery-Plugin-Factory.min.js"></script>
+<script>
+jQuery(function($) {
+  $.awesome(); // "awesome"
+});
+</script>
+```
 
 Features
 --------

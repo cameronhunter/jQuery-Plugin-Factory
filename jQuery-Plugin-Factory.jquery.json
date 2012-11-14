@@ -1,0 +1,29 @@
+{
+  "name": "jQuery-Plugin-Factory",
+  "title": "jQuery Plugin Factory",
+  "description": "A plugin which takes care of all the jQuery plugin best practices for you, so you can focus on the functionality",
+  "version": "1.0.0",
+  "homepage": "https://github.com/cameron/jQuery-Plugin-Factory",
+  "author": {
+    "name": "Cameron Hunter",
+    "email": "hello@cameronhunter.co.uk",
+    "url": "http://cameronhunter.co.uk"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cameron/jQuery-Plugin-Factory.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cameron/jQuery-Plugin-Factory/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/cameron/jQuery-Plugin-Factory/blob/master/LICENSE-MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": "1.7.3"
+  },
+  "keywords": []
+}
