@@ -1,4 +1,6 @@
-# jQuery Plugin Factory [![Build Status](https://secure.travis-ci.org/cameronhunter/jQuery-Plugin-Factory.png?branch=master)](https://travis-ci.org/cameronhunter/jQuery-Plugin-Factory)
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/) [![Build Status](https://secure.travis-ci.org/cameronhunter/jQuery-Plugin-Factory.svg?branch=master)](https://travis-ci.org/cameronhunter/jQuery-Plugin-Factory)
+
+# jQuery Plugin Factory
 
 There are many [best practices](http://docs.jquery.com/Plugins/Authoring) when creating a jQuery plugin. This project takes care of all the boilerplate code required to fullfill these best practices so you can focus on the functionality of your plugin.
 
